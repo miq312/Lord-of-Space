@@ -1,0 +1,41 @@
+cmake_minimum_required(VERSION 3.24.0)
+project(Lords-of-Space)
+
+include(FetchContent)
+FetchContent_Declare(SFML
+        GIT_REPOSITORY https://github.com/SFML/SFML.git
+        GIT_TAG 2.6.x)
+FetchContent_MakeAvailable(SFML)
+
+add_subdirectory(src)
+
+add_executable(${PROJECT_NAME}
+    src/main.cpp
+    src/main.h
+    src/Boss.cpp
+    src/Boss.h
+    src/Bullet.cpp
+    src/Bullet.h
+    src/Enemy.cpp
+    src/Enemy.h
+    src/Explosion.cpp
+    src/Explosion.h
+    src/Game.cpp
+    src/Game.h
+    src/Player.cpp
+    src/Player.h
+    src/Utilities.h
+)
+
+
+
+target_link_libraries(${PROJECT_NAME}
+    PRIVATE
+        sfml-audio
+        sfml-graphics
+        sfml-system
+        sfml-window
+)
+
+target_compile_options(${PROJECT_NAME} PRIVATE -Wall)
+
