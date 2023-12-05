@@ -1,0 +1,42 @@
+set(SOURCES
+main.cpp 
+Boss.cpp 
+Bullet.cpp 
+Enemy.cpp 
+Explosion.cpp
+Player.cpp
+Game.cpp
+)
+
+set(HEADERS
+Boss.h 
+Bullet.h
+Enemy.h
+Explosion.h
+Game.h
+Player.h
+Utilities.h    
+)
+
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+
+set(DEPENDENCES
+    sfml-graphics
+    sfml-window
+    sfml-system
+)
+
+target_include_directories(${PROJECT_NAME} PRIVATE ${SFML_INCLUDE_DIR})
+
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_11)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE ${DEPENDENCES})
+
+foreach(dependency ${DEPENDENCES})
+    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            $<TARGET_FILE:${dependency}>
+            $<TARGET_FILE_DIR:${PROJECT_NAME}>
+    )
+endforeach()
+

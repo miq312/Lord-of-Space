@@ -2,7 +2,7 @@
 
 void Explosion::initShape()
 {
-	if (!this->texture.loadFromFile("Images/explosion.png"))
+	if (!this->texture.loadFromFile("../../Images/explosion.png"))
 	{
 		std::cout << "ERROR::EXPLOSION::INITSHAPE::Could not load texture file" << std::endl;
 	}

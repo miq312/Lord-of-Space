@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\ligas\OneDrive\Pulpit\Lord-of-Space\CMakeFiles\f51e936fff7f5a19a1cda895c5b76f1c\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{521F81B6-C821-3CF1-9741-2780F923CA83}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

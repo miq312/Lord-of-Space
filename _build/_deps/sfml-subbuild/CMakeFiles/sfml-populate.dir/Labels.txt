@@ -1,0 +1,14 @@
+# Target labels
+ sfml-populate
+# Source files and their labels
+C:/Lord-of-Space/_build/_deps/sfml-subbuild/CMakeFiles/sfml-populate
+C:/Lord-of-Space/_build/_deps/sfml-subbuild/CMakeFiles/8962d4a43e2d446000af4ad617329c57/sfml-populate.rule
+C:/Lord-of-Space/_build/_deps/sfml-subbuild/CMakeFiles/34bbeb40c186bff02dc67138c5efe131/sfml-populate-complete.rule
+C:/Lord-of-Space/_build/_deps/sfml-subbuild/CMakeFiles/a90b02b30f60bf562ab04998e626efd7/sfml-populate-build.rule
+C:/Lord-of-Space/_build/_deps/sfml-subbuild/CMakeFiles/a90b02b30f60bf562ab04998e626efd7/sfml-populate-configure.rule
+C:/Lord-of-Space/_build/_deps/sfml-subbuild/CMakeFiles/a90b02b30f60bf562ab04998e626efd7/sfml-populate-download.rule
+C:/Lord-of-Space/_build/_deps/sfml-subbuild/CMakeFiles/a90b02b30f60bf562ab04998e626efd7/sfml-populate-install.rule
+C:/Lord-of-Space/_build/_deps/sfml-subbuild/CMakeFiles/a90b02b30f60bf562ab04998e626efd7/sfml-populate-mkdir.rule
+C:/Lord-of-Space/_build/_deps/sfml-subbuild/CMakeFiles/a90b02b30f60bf562ab04998e626efd7/sfml-populate-patch.rule
+C:/Lord-of-Space/_build/_deps/sfml-subbuild/CMakeFiles/a90b02b30f60bf562ab04998e626efd7/sfml-populate-test.rule
+C:/Lord-of-Space/_build/_deps/sfml-subbuild/CMakeFiles/a90b02b30f60bf562ab04998e626efd7/sfml-populate-update.rule

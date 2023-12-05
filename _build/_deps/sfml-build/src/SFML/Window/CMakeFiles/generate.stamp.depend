@@ -1,0 +1,6 @@
+# CMake generation dependency list for this directory.
+C:/Lord-of-Space/_build/_deps/sfml-src/src/SFML/Window/CMakeLists.txt
+C:/Lord-of-Space/_build/_deps/sfml-src/tools/windows/resource.rc.in
+C:/Program Files/CMake/share/cmake-3.28/Modules/FindOpenGL.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/FindPackageMessage.cmake

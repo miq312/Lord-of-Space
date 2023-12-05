@@ -1,0 +1,10 @@
+C:\Lord-of-Space\_build\_deps\sfml-src\src\SFML\Network\Ftp.cpp;C:\Lord-of-Space\_build\_deps\sfml-build\src\SFML\Network\sfml-network.dir\Debug\Ftp.obj
+C:\Lord-of-Space\_build\_deps\sfml-src\src\SFML\Network\Http.cpp;C:\Lord-of-Space\_build\_deps\sfml-build\src\SFML\Network\sfml-network.dir\Debug\Http.obj
+C:\Lord-of-Space\_build\_deps\sfml-src\src\SFML\Network\IpAddress.cpp;C:\Lord-of-Space\_build\_deps\sfml-build\src\SFML\Network\sfml-network.dir\Debug\IpAddress.obj
+C:\Lord-of-Space\_build\_deps\sfml-src\src\SFML\Network\Packet.cpp;C:\Lord-of-Space\_build\_deps\sfml-build\src\SFML\Network\sfml-network.dir\Debug\Packet.obj
+C:\Lord-of-Space\_build\_deps\sfml-src\src\SFML\Network\Socket.cpp;C:\Lord-of-Space\_build\_deps\sfml-build\src\SFML\Network\sfml-network.dir\Debug\Socket.obj
+C:\Lord-of-Space\_build\_deps\sfml-src\src\SFML\Network\SocketSelector.cpp;C:\Lord-of-Space\_build\_deps\sfml-build\src\SFML\Network\sfml-network.dir\Debug\SocketSelector.obj
+C:\Lord-of-Space\_build\_deps\sfml-src\src\SFML\Network\TcpListener.cpp;C:\Lord-of-Space\_build\_deps\sfml-build\src\SFML\Network\sfml-network.dir\Debug\TcpListener.obj
+C:\Lord-of-Space\_build\_deps\sfml-src\src\SFML\Network\TcpSocket.cpp;C:\Lord-of-Space\_build\_deps\sfml-build\src\SFML\Network\sfml-network.dir\Debug\TcpSocket.obj
+C:\Lord-of-Space\_build\_deps\sfml-src\src\SFML\Network\UdpSocket.cpp;C:\Lord-of-Space\_build\_deps\sfml-build\src\SFML\Network\sfml-network.dir\Debug\UdpSocket.obj
+C:\Lord-of-Space\_build\_deps\sfml-src\src\SFML\Network\Win32\SocketImpl.cpp;C:\Lord-of-Space\_build\_deps\sfml-build\src\SFML\Network\sfml-network.dir\Debug\SocketImpl.obj

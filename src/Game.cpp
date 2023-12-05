@@ -60,7 +60,7 @@ void Game::initWindow()
 void Game::initTextures()
 {
     this->textures["BULLET"] = new sf::Texture();
-    if(!this->textures["BULLET"]->loadFromFile("Images/bullet.png"))
+    if(!this->textures["BULLET"]->loadFromFile("../../Images/bullet.png"))
         std::cout << "ERROR::GAME::INITTEXTURE::Could not load texture file" << std::endl;
 }
 
@@ -83,7 +83,7 @@ void Game::initExplosion()
 
 void Game::initGui()
 {
-    if (!this->font.loadFromFile("Fonts/calibri.ttf"))
+    if (!this->font.loadFromFile("../../Fonts/calibri.ttf"))
         std::cout << "FAIL::GAME::INITGUI::Failed load font" << std::endl;
 
     this->pointText.setPosition(1000, 10);
@@ -112,7 +112,7 @@ void Game::initGui()
 
 void Game::initWorld()
 {
-    if (!this->worldBackgroundTexture.loadFromFile("Images/world.png"))
+    if (!this->worldBackgroundTexture.loadFromFile("../../Images/world.png"))
         std::cout << "FAIL::GAME::INITWORLD::Failed load texture file" << std::endl;
     this->worldBackground.setTexture(this->worldBackgroundTexture);
     this->worldBackground.setScale(1.95, 1.55);  //poprawic

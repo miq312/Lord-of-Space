@@ -1,0 +1,3 @@
+C:/Lord-of-Space/_build/_deps/sfml-subbuild/CMakeFiles/sfml-populate.dir
+C:/Lord-of-Space/_build/_deps/sfml-subbuild/CMakeFiles/ALL_BUILD.dir
+C:/Lord-of-Space/_build/_deps/sfml-subbuild/CMakeFiles/ZERO_CHECK.dir

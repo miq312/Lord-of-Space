@@ -14,7 +14,7 @@ void Enemy::initVaraibles()
 
 void Enemy::initShape()
 {
-	if (!this->texture.loadFromFile("Images/asteroid.png"))
+	if (!this->texture.loadFromFile("../../Images/asteroid.png"))
 	{
 		std::cout << "ERROR::PLAYER::INITTEXTURE::Could not load texture file" << std::endl;
 	}

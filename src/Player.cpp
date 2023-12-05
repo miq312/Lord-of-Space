@@ -10,7 +10,7 @@ void Player::initSprite()
 
 void Player::initTexture()
 {
-	if (!this->texture.loadFromFile("Images/ship.png"))
+	if (!this->texture.loadFromFile("../../Images/ship.png"))
 	{
 		std::cout << "ERROR::PLAYER::INITTEXTURE::Could not load texture file" << std::endl;
 	}

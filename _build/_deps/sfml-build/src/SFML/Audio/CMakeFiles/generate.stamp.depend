@@ -1,0 +1,8 @@
+# CMake generation dependency list for this directory.
+C:/Lord-of-Space/_build/_deps/sfml-src/cmake/Modules/FindFLAC.cmake
+C:/Lord-of-Space/_build/_deps/sfml-src/cmake/Modules/FindVORBIS.cmake
+C:/Lord-of-Space/_build/_deps/sfml-src/src/SFML/Audio/CMakeLists.txt
+C:/Lord-of-Space/_build/_deps/sfml-src/tools/windows/resource.rc.in
+C:/Program Files/CMake/share/cmake-3.28/Modules/FindOpenAL.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/FindPackageMessage.cmake

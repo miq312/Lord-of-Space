@@ -1,0 +1,10 @@
+﻿  Building Custom Rule C:/Lord-of-Space/src/CMakeLists.txt
+  main.cpp
+  Boss.cpp
+  Bullet.cpp
+  Enemy.cpp
+  Explosion.cpp
+  Player.cpp
+  Game.cpp
+  Generowanie kodu...
+  Lords-of-Space.vcxproj -> C:\Lord-of-Space\_build\src\Debug\Lords-of-Space.exe

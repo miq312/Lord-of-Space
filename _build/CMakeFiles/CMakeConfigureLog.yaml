@@ -1,0 +1,449 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Windows - 10.0.22621 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.6.3+07e294721 for .NET Framework
+      Kompilacja rozpoczęła się 02.12.2023 20:16:23.
+      
+      Projekt "C:\\Lord-of-Space\\_build\\CMakeFiles\\3.28.0-rc5\\CompilerIdCXX\\CompilerIdCXX.vcxproj" w węźle 1 (domyślne elementy docelowe).
+      PrepareForBuild:
+        Tworzenie katalogu "Debug\\".
+        Tworzenie katalogu "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Trwa tworzenie "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild", ponieważ określono "AlwaysCreate".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Lord-of-Space\\_build\\CMakeFiles\\3.28.0-rc5\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Usuwanie pliku "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Modyfikowanie "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Kompilowanie projektu "C:\\Lord-of-Space\\_build\\CMakeFiles\\3.28.0-rc5\\CompilerIdCXX\\CompilerIdCXX.vcxproj" wykonane (domyślne elementy docelowe).
+      
+      Kompilacja powiodła się.
+          Ostrzeżenia: 0
+          Liczba błędów: 0
+      
+      Czas, który upłynął: 00:00:00.68
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/Lord-of-Space/_build/CMakeFiles/3.28.0-rc5/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-62d018"
+      binary: "C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-62d018"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-62d018'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_1e38b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.6.3+07e294721 for .NET Framework
+        Kompilacja rozpoczęła się 02.12.2023 20:16:24.
+        
+        Projekt "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-62d018\\cmTC_1e38b.vcxproj" w węźle 1 (domyślne elementy docelowe).
+        PrepareForBuild:
+          Tworzenie katalogu "cmTC_1e38b.dir\\Debug\\".
+          Tworzenie katalogu "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-62d018\\Debug\\".
+          Tworzenie katalogu "cmTC_1e38b.dir\\Debug\\cmTC_1e38b.tlog\\".
+        InitializeBuildStatus:
+          Trwa tworzenie "cmTC_1e38b.dir\\Debug\\cmTC_1e38b.tlog\\unsuccessfulbuild", ponieważ określono "AlwaysCreate".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1e38b.dir\\Debug\\\\" /Fd"cmTC_1e38b.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ wersja kompilatora optymalizującego 19.36.32532 dla x64
+          Copyright (C) Microsoft Corporation. Wszystkie prawa zastrzeżone.
+          CMakeCXXCompilerABI.cpp
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1e38b.dir\\Debug\\\\" /Fd"cmTC_1e38b.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-62d018\\Debug\\cmTC_1e38b.exe" /INCREMENTAL /ILK:"cmTC_1e38b.dir\\Debug\\cmTC_1e38b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-62d018/Debug/cmTC_1e38b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-62d018/Debug/cmTC_1e38b.lib" /MACHINE:X64  /machine:x64 cmTC_1e38b.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_1e38b.vcxproj -> C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-62d018\\Debug\\cmTC_1e38b.exe
+        FinalizeBuildStatus:
+          Usuwanie pliku "cmTC_1e38b.dir\\Debug\\cmTC_1e38b.tlog\\unsuccessfulbuild".
+          Modyfikowanie "cmTC_1e38b.dir\\Debug\\cmTC_1e38b.tlog\\cmTC_1e38b.lastbuildstate".
+        Kompilowanie projektu "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-62d018\\cmTC_1e38b.vcxproj" wykonane (domyślne elementy docelowe).
+        
+        Kompilacja powiodła się.
+            Ostrzeżenia: 0
+            Liczba błędów: 0
+        
+        Czas, który upłynął: 00:00:00.46
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "_build/_deps/sfml-src/CMakeLists.txt:38 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.6.3+07e294721 for .NET Framework
+      Kompilacja rozpoczęła się 02.12.2023 20:16:53.
+      
+      Projekt "C:\\Lord-of-Space\\_build\\CMakeFiles\\3.28.0-rc5\\CompilerIdC\\CompilerIdC.vcxproj" w węźle 1 (domyślne elementy docelowe).
+      PrepareForBuild:
+        Tworzenie katalogu "Debug\\".
+        Tworzenie katalogu "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Trwa tworzenie "Debug\\CompilerIdC.tlog\\unsuccessfulbuild", ponieważ określono "AlwaysCreate".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Lord-of-Space\\_build\\CMakeFiles\\3.28.0-rc5\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Usuwanie pliku "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Modyfikowanie "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Kompilowanie projektu "C:\\Lord-of-Space\\_build\\CMakeFiles\\3.28.0-rc5\\CompilerIdC\\CompilerIdC.vcxproj" wykonane (domyślne elementy docelowe).
+      
+      Kompilacja powiodła się.
+          Ostrzeżenia: 0
+          Liczba błędów: 0
+      
+      Czas, który upłynął: 00:00:00.60
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Lord-of-Space/_build/CMakeFiles/3.28.0-rc5/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "_build/_deps/sfml-src/CMakeLists.txt:38 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-jsmawg"
+      binary: "C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-jsmawg"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "C:/Lord-of-Space/_build/_deps/sfml-src/cmake/CompilerOptionsOverride.cmake"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-jsmawg'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_f67ba.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.6.3+07e294721 for .NET Framework
+        Kompilacja rozpoczęła się 02.12.2023 20:16:54.
+        
+        Projekt "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-jsmawg\\cmTC_f67ba.vcxproj" w węźle 1 (domyślne elementy docelowe).
+        PrepareForBuild:
+          Tworzenie katalogu "cmTC_f67ba.dir\\Debug\\".
+          Tworzenie katalogu "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-jsmawg\\Debug\\".
+          Tworzenie katalogu "cmTC_f67ba.dir\\Debug\\cmTC_f67ba.tlog\\".
+        InitializeBuildStatus:
+          Trwa tworzenie "cmTC_f67ba.dir\\Debug\\cmTC_f67ba.tlog\\unsuccessfulbuild", ponieważ określono "AlwaysCreate".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f67ba.dir\\Debug\\\\" /Fd"cmTC_f67ba.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ wersja kompilatora optymalizującego 19.36.32532 dla x64
+          Copyright (C) Microsoft Corporation. Wszystkie prawa zastrzeżone.
+          CMakeCCompilerABI.c
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f67ba.dir\\Debug\\\\" /Fd"cmTC_f67ba.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-jsmawg\\Debug\\cmTC_f67ba.exe" /INCREMENTAL /ILK:"cmTC_f67ba.dir\\Debug\\cmTC_f67ba.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-jsmawg/Debug/cmTC_f67ba.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-jsmawg/Debug/cmTC_f67ba.lib" /MACHINE:X64  /machine:x64 cmTC_f67ba.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_f67ba.vcxproj -> C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-jsmawg\\Debug\\cmTC_f67ba.exe
+        FinalizeBuildStatus:
+          Usuwanie pliku "cmTC_f67ba.dir\\Debug\\cmTC_f67ba.tlog\\unsuccessfulbuild".
+          Modyfikowanie "cmTC_f67ba.dir\\Debug\\cmTC_f67ba.tlog\\cmTC_f67ba.lastbuildstate".
+        Kompilowanie projektu "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-jsmawg\\cmTC_f67ba.vcxproj" wykonane (domyślne elementy docelowe).
+        
+        Kompilacja powiodła się.
+            Ostrzeżenia: 0
+            Liczba błędów: 0
+        
+        Czas, który upłynął: 00:00:00.42
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckTypeSize.cmake:250 (check_include_file)"
+      - "_build/_deps/sfml-src/cmake/Config.cmake:10 (check_type_size)"
+      - "_build/_deps/sfml-src/CMakeLists.txt:41 (include)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-kkcy9y"
+      binary: "C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-kkcy9y"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "C:/Lord-of-Space/_build/_deps/sfml-src/cmake/CompilerOptionsOverride.cmake"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-kkcy9y'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_f8a3c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.6.3+07e294721 for .NET Framework
+        Kompilacja rozpoczęła się 02.12.2023 20:16:55.
+        
+        Projekt "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-kkcy9y\\cmTC_f8a3c.vcxproj" w węźle 1 (domyślne elementy docelowe).
+        PrepareForBuild:
+          Tworzenie katalogu "cmTC_f8a3c.dir\\Debug\\".
+          Tworzenie katalogu "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-kkcy9y\\Debug\\".
+          Tworzenie katalogu "cmTC_f8a3c.dir\\Debug\\cmTC_f8a3c.tlog\\".
+        InitializeBuildStatus:
+          Trwa tworzenie "cmTC_f8a3c.dir\\Debug\\cmTC_f8a3c.tlog\\unsuccessfulbuild", ponieważ określono "AlwaysCreate".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f8a3c.dir\\Debug\\\\" /Fd"cmTC_f8a3c.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-kkcy9y\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ wersja kompilatora optymalizującego 19.36.32532 dla x64
+          Copyright (C) Microsoft Corporation. Wszystkie prawa zastrzeżone.
+          CheckIncludeFile.c
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f8a3c.dir\\Debug\\\\" /Fd"cmTC_f8a3c.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-kkcy9y\\CheckIncludeFile.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-kkcy9y\\Debug\\cmTC_f8a3c.exe" /INCREMENTAL /ILK:"cmTC_f8a3c.dir\\Debug\\cmTC_f8a3c.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-kkcy9y/Debug/cmTC_f8a3c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-kkcy9y/Debug/cmTC_f8a3c.lib" /MACHINE:X64  /machine:x64 cmTC_f8a3c.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_f8a3c.vcxproj -> C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-kkcy9y\\Debug\\cmTC_f8a3c.exe
+        FinalizeBuildStatus:
+          Usuwanie pliku "cmTC_f8a3c.dir\\Debug\\cmTC_f8a3c.tlog\\unsuccessfulbuild".
+          Modyfikowanie "cmTC_f8a3c.dir\\Debug\\cmTC_f8a3c.tlog\\cmTC_f8a3c.lastbuildstate".
+        Kompilowanie projektu "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-kkcy9y\\cmTC_f8a3c.vcxproj" wykonane (domyślne elementy docelowe).
+        
+        Kompilacja powiodła się.
+            Ostrzeżenia: 0
+            Liczba błędów: 0
+        
+        Czas, który upłynął: 00:00:00.40
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckTypeSize.cmake:251 (check_include_file)"
+      - "_build/_deps/sfml-src/cmake/Config.cmake:10 (check_type_size)"
+      - "_build/_deps/sfml-src/CMakeLists.txt:41 (include)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-3dnn1j"
+      binary: "C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-3dnn1j"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "C:/Lord-of-Space/_build/_deps/sfml-src/cmake/CompilerOptionsOverride.cmake"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-3dnn1j'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_d91ce.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.6.3+07e294721 for .NET Framework
+        Kompilacja rozpoczęła się 02.12.2023 20:16:56.
+        
+        Projekt "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-3dnn1j\\cmTC_d91ce.vcxproj" w węźle 1 (domyślne elementy docelowe).
+        PrepareForBuild:
+          Tworzenie katalogu "cmTC_d91ce.dir\\Debug\\".
+          Tworzenie katalogu "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-3dnn1j\\Debug\\".
+          Tworzenie katalogu "cmTC_d91ce.dir\\Debug\\cmTC_d91ce.tlog\\".
+        InitializeBuildStatus:
+          Trwa tworzenie "cmTC_d91ce.dir\\Debug\\cmTC_d91ce.tlog\\unsuccessfulbuild", ponieważ określono "AlwaysCreate".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d91ce.dir\\Debug\\\\" /Fd"cmTC_d91ce.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-3dnn1j\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ wersja kompilatora optymalizującego 19.36.32532 dla x64
+          Copyright (C) Microsoft Corporation. Wszystkie prawa zastrzeżone.
+          CheckIncludeFile.c
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d91ce.dir\\Debug\\\\" /Fd"cmTC_d91ce.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-3dnn1j\\CheckIncludeFile.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-3dnn1j\\Debug\\cmTC_d91ce.exe" /INCREMENTAL /ILK:"cmTC_d91ce.dir\\Debug\\cmTC_d91ce.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-3dnn1j/Debug/cmTC_d91ce.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-3dnn1j/Debug/cmTC_d91ce.lib" /MACHINE:X64  /machine:x64 cmTC_d91ce.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_d91ce.vcxproj -> C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-3dnn1j\\Debug\\cmTC_d91ce.exe
+        FinalizeBuildStatus:
+          Usuwanie pliku "cmTC_d91ce.dir\\Debug\\cmTC_d91ce.tlog\\unsuccessfulbuild".
+          Modyfikowanie "cmTC_d91ce.dir\\Debug\\cmTC_d91ce.tlog\\cmTC_d91ce.lastbuildstate".
+        Kompilowanie projektu "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-3dnn1j\\cmTC_d91ce.vcxproj" wykonane (domyślne elementy docelowe).
+        
+        Kompilacja powiodła się.
+            Ostrzeżenia: 0
+            Liczba błędów: 0
+        
+        Czas, który upłynął: 00:00:00.43
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckTypeSize.cmake:252 (check_include_file)"
+      - "_build/_deps/sfml-src/cmake/Config.cmake:10 (check_type_size)"
+      - "_build/_deps/sfml-src/CMakeLists.txt:41 (include)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-g4b3xf"
+      binary: "C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-g4b3xf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "C:/Lord-of-Space/_build/_deps/sfml-src/cmake/CompilerOptionsOverride.cmake"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-g4b3xf'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8c864.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.6.3+07e294721 for .NET Framework
+        Kompilacja rozpoczęła się 02.12.2023 20:16:56.
+        
+        Projekt "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-g4b3xf\\cmTC_8c864.vcxproj" w węźle 1 (domyślne elementy docelowe).
+        PrepareForBuild:
+          Tworzenie katalogu "cmTC_8c864.dir\\Debug\\".
+          Tworzenie katalogu "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-g4b3xf\\Debug\\".
+          Tworzenie katalogu "cmTC_8c864.dir\\Debug\\cmTC_8c864.tlog\\".
+        InitializeBuildStatus:
+          Trwa tworzenie "cmTC_8c864.dir\\Debug\\cmTC_8c864.tlog\\unsuccessfulbuild", ponieważ określono "AlwaysCreate".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8c864.dir\\Debug\\\\" /Fd"cmTC_8c864.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-g4b3xf\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ wersja kompilatora optymalizującego 19.36.32532 dla x64
+          CheckIncludeFile.c
+          Copyright (C) Microsoft Corporation. Wszystkie prawa zastrzeżone.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8c864.dir\\Debug\\\\" /Fd"cmTC_8c864.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-g4b3xf\\CheckIncludeFile.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-g4b3xf\\Debug\\cmTC_8c864.exe" /INCREMENTAL /ILK:"cmTC_8c864.dir\\Debug\\cmTC_8c864.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-g4b3xf/Debug/cmTC_8c864.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-g4b3xf/Debug/cmTC_8c864.lib" /MACHINE:X64  /machine:x64 cmTC_8c864.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_8c864.vcxproj -> C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-g4b3xf\\Debug\\cmTC_8c864.exe
+        FinalizeBuildStatus:
+          Usuwanie pliku "cmTC_8c864.dir\\Debug\\cmTC_8c864.tlog\\unsuccessfulbuild".
+          Modyfikowanie "cmTC_8c864.dir\\Debug\\cmTC_8c864.tlog\\cmTC_8c864.lastbuildstate".
+        Kompilowanie projektu "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-g4b3xf\\cmTC_8c864.vcxproj" wykonane (domyślne elementy docelowe).
+        
+        Kompilacja powiodła się.
+            Ostrzeżenia: 0
+            Liczba błędów: 0
+        
+        Czas, który upłynął: 00:00:00.42
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckTypeSize.cmake:146 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckTypeSize.cmake:271 (__check_type_size_impl)"
+      - "_build/_deps/sfml-src/cmake/Config.cmake:10 (check_type_size)"
+      - "_build/_deps/sfml-src/CMakeLists.txt:41 (include)"
+    checks:
+      - "Check size of void*"
+    directories:
+      source: "C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-u1kguz"
+      binary: "C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-u1kguz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "C:/Lord-of-Space/_build/_deps/sfml-src/cmake/CompilerOptionsOverride.cmake"
+    buildResult:
+      variable: "HAVE_SIZEOF_VOID_PTR"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-u1kguz'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_56734.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.6.3+07e294721 for .NET Framework
+        Kompilacja rozpoczęła się 02.12.2023 20:16:57.
+        
+        Projekt "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-u1kguz\\cmTC_56734.vcxproj" w węźle 1 (domyślne elementy docelowe).
+        PrepareForBuild:
+          Tworzenie katalogu "cmTC_56734.dir\\Debug\\".
+          Tworzenie katalogu "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-u1kguz\\Debug\\".
+          Tworzenie katalogu "cmTC_56734.dir\\Debug\\cmTC_56734.tlog\\".
+        InitializeBuildStatus:
+          Trwa tworzenie "cmTC_56734.dir\\Debug\\cmTC_56734.tlog\\unsuccessfulbuild", ponieważ określono "AlwaysCreate".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_56734.dir\\Debug\\\\" /Fd"cmTC_56734.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-u1kguz\\SIZEOF_VOID_PTR.c"
+          Microsoft (R) C/C++ wersja kompilatora optymalizującego 19.36.32532 dla x64
+          SIZEOF_VOID_PTR.c
+          Copyright (C) Microsoft Corporation. Wszystkie prawa zastrzeżone.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_56734.dir\\Debug\\\\" /Fd"cmTC_56734.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-u1kguz\\SIZEOF_VOID_PTR.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-u1kguz\\Debug\\cmTC_56734.exe" /INCREMENTAL /ILK:"cmTC_56734.dir\\Debug\\cmTC_56734.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-u1kguz/Debug/cmTC_56734.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Lord-of-Space/_build/CMakeFiles/CMakeScratch/TryCompile-u1kguz/Debug/cmTC_56734.lib" /MACHINE:X64  /machine:x64 cmTC_56734.dir\\Debug\\SIZEOF_VOID_PTR.obj
+          cmTC_56734.vcxproj -> C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-u1kguz\\Debug\\cmTC_56734.exe
+        FinalizeBuildStatus:
+          Usuwanie pliku "cmTC_56734.dir\\Debug\\cmTC_56734.tlog\\unsuccessfulbuild".
+          Modyfikowanie "cmTC_56734.dir\\Debug\\cmTC_56734.tlog\\cmTC_56734.lastbuildstate".
+        Kompilowanie projektu "C:\\Lord-of-Space\\_build\\CMakeFiles\\CMakeScratch\\TryCompile-u1kguz\\cmTC_56734.vcxproj" wykonane (domyślne elementy docelowe).
+        
+        Kompilacja powiodła się.
+            Ostrzeżenia: 0
+            Liczba błędów: 0
+        
+        Czas, który upłynął: 00:00:00.42
+        
+      exitCode: 0
+...

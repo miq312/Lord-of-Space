@@ -1,0 +1,32 @@
+﻿  Building Custom Rule C:/Lord-of-Space/_build/_deps/sfml-src/src/SFML/Window/CMakeLists.txt
+  Clipboard.cpp
+  Context.cpp
+  Cursor.cpp
+  GlContext.cpp
+  GlResource.cpp
+  Joystick.cpp
+  JoystickManager.cpp
+  Keyboard.cpp
+  Mouse.cpp
+  Touch.cpp
+  Sensor.cpp
+  SensorManager.cpp
+  VideoMode.cpp
+  Vulkan.cpp
+  Window.cpp
+  WindowBase.cpp
+  WindowImpl.cpp
+  CursorImpl.cpp
+  ClipboardImpl.cpp
+  InputImpl.cpp
+  Generowanie kodu...
+  Trwa kompilowanie...
+  JoystickImpl.cpp
+  SensorImpl.cpp
+  VideoModeImpl.cpp
+  VulkanImplWin32.cpp
+  WindowImplWin32.cpp
+  WglContext.cpp
+  Generowanie kodu...
+     Trwa tworzenie biblioteki C:/Lord-of-Space/_build/_deps/sfml-build/lib/Debug/sfml-window-d.lib i obiektu C:/Lord-of-Space/_build/_deps/sfml-build/lib/Debug/sfml-window-d.exp
+  sfml-window.vcxproj -> C:\Lord-of-Space\_build\_deps\sfml-build\lib\Debug\sfml-window-d-2.dll
