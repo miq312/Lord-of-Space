@@ -6,6 +6,7 @@ Enemy.cpp
 Explosion.cpp
 Player.cpp
 Game.cpp
+Menu.cpp
 )
 
 set(HEADERS
@@ -15,6 +16,7 @@ Enemy.h
 Explosion.h
 Game.h
 Player.h
+Menu.h
 Utilities.h    
 )
 

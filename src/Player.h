@@ -36,9 +36,10 @@ public:
 	void updateAttack();
 	void move(const float dirX, const float dirY);
 	void update();
-	void render(sf::RenderTarget &target);
+	void render(sf::RenderTarget& target);
 	void setHp(const int hp);
 	void loseHp(const int value);
-	
+	void reset();
+
 };
 

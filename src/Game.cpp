@@ -4,6 +4,7 @@
 Game::Game()
 {
     this->initWindow();
+    this->initMenu();
     this->initTextures();
     this->initPlayer();
     this->initEnemies();
@@ -11,6 +12,8 @@ Game::Game()
     this->initGui();
     this->initSystem();
     this->initExplosion();
+
+    this->gameState = MENU;
 }
 
 Game::~Game()
@@ -18,7 +21,7 @@ Game::~Game()
     delete this->window;
     delete this->player;
 
-    for (auto &i : this->textures)
+    for (auto& i : this->textures)
     {
         delete i.second;
     }
@@ -31,10 +34,8 @@ Game::~Game()
     {
         delete i;
     }
-    for (auto* i : this->explosions)
-    {
-        delete i;
-    }
+
+    this->explosions.clear();
 }
 
 //functions
@@ -60,7 +61,7 @@ void Game::initWindow()
 void Game::initTextures()
 {
     this->textures["BULLET"] = new sf::Texture();
-    if(!this->textures["BULLET"]->loadFromFile("../../Images/bullet.png"))
+    if (!this->textures["BULLET"]->loadFromFile("../../Images/bullet.png"))
         std::cout << "ERROR::GAME::INITTEXTURE::Could not load texture file" << std::endl;
 }
 
@@ -123,6 +124,11 @@ void Game::initSystem()
     this->points = 0;
 }
 
+void Game::initMenu()
+{
+    this->menu = new Menu(this->window->getSize().x, this->window->getSize().y);
+}
+
 
 void Game::updatePollEvents()
 {
@@ -134,6 +140,11 @@ void Game::updatePollEvents()
         if (e.Event::KeyPressed && e.Event::key.code == sf::Keyboard::Escape)
             this->window->close();
     }
+}
+
+void Game::setGameState(GameState newState)
+{
+    this->gameState = newState;
 }
 
 void Game::updateInit()
@@ -152,15 +163,15 @@ void Game::updateInit()
     {
         this->bullets.push_back(
             new Bullet(
-                this->textures["BULLET"], 
-                this->player->getPos().x + this->player->getBounds().width/2.f,
+                this->textures["BULLET"],
+                this->player->getPos().x + this->player->getBounds().width / 2.f,
                 this->player->getPos().y,
-                    0.f,
-                    -1.f,
-                    5.f
-                    )
-                    );
-                    isShooting = true;
+                0.f,
+                -1.f,
+                5.f
+            )
+        );
+        isShooting = true;
     }
 
     if (!sf::Mouse::isButtonPressed(sf::Mouse::Left))
@@ -227,7 +238,7 @@ void Game::updateCombat()
             if (this->enemies[i]->getBounds().intersects(this->bullets[k]->getBounds()))
             {
                 //wspolrzedne ekspolzji
-                this->explosions.push_back(new Explosion(this->enemies[i]->getPosition().x, this->enemies[i]->getPosition().y));
+                this->explosions.push_back(std::make_shared<Explosion>(this->enemies[i]->getPosition().x, this->enemies[i]->getPosition().y));
 
                 this->points += this->enemies[i]->getPoints();
 
@@ -245,16 +256,10 @@ void Game::updateCombat()
 
 void Game::updateExplosion()
 {
-    this->explosionTime += 1.f;
-    //if (this->explosions.size() >= 2)
-    //{
-    //   delete this->explosions[0];
-    //    this->explosions.erase(this->explosions.begin());
-    //}
+    this->explosionTime += 1.2f;
 
     if ((this->explosionTime >= this->explosionTimeMax) && !this->explosions.empty())
     {
-        delete this->explosions[0];
         this->explosions.erase(this->explosions.begin());
         this->explosionTime = 0;
     }
@@ -284,7 +289,7 @@ void Game::updateCollision()
     //bottom screen collision
     else if (this->player->getBounds().top + this->player->getBounds().height >= this->window->getSize().y)
     {
-        this->player->setPosition(this->player->getBounds().left , this->window->getSize().y - this->player->getBounds().height);
+        this->player->setPosition(this->player->getBounds().left, this->window->getSize().y - this->player->getBounds().height);
     }
 }
 
@@ -301,10 +306,41 @@ void Game::updateGui()
 
 
     //Update PlayerGui
-    
+
     float hpPercent = static_cast<float>(this->player->getHp()) / this->player->getHpMax();
     this->playerHpBar.setSize(sf::Vector2f(300.f * hpPercent, this->playerHpBar.getSize().y));
 }
+
+void Game::updateMainMenu()
+{
+    static bool arrowKeyPressed = false;
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !arrowKeyPressed) {
+        this->menu->moveUp();
+        arrowKeyPressed = true;
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !arrowKeyPressed) {
+        this->menu->moveDown();
+        arrowKeyPressed = true;
+    }
+    else if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+        arrowKeyPressed = false;
+    }
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
+    {
+        switch (menu->menuPressed())
+        {
+        case 1:
+            gameState = GAME_PLAY;
+            break;
+        case 2:
+            gameState = GAME_PLAY;
+            break;
+        }
+    }
+}
+
 
 void Game::renderGui()
 {
@@ -318,42 +354,79 @@ void Game::renderWorld()
     this->window->draw(this->worldBackground);
 }
 
-void Game::update()
+void Game::resetGame()
 {
-    this->updateInit();
-    this->player->update();
-    this->updateCollision();
-    this->updateBullets();
-    this->updateEnemies();
-    this->updateCombat();
-    this->updateExplosion();
-    this->updateGui();
-    this->updateWorld();
+    this->points = 0;
+    this->player->reset();
+    this->bullets.clear();
+    this->enemies.clear();
+    this->explosions.clear();
+    this->gameState = MENU;
 }
 
+void Game::update()
+{
+    switch (gameState)
+    {
+    case MENU:
+        this->updateMainMenu();
+        break;
+
+    case GAME_PLAY:
+        this->updateInit();
+        this->player->update();
+        this->updateCollision();
+        this->updateBullets();
+        this->updateEnemies();
+        this->updateCombat();
+        this->updateExplosion();
+        this->updateGui();
+        this->updateWorld();
+        if (this->player->getHp() <= 0)
+        {
+            this->resetGame();
+            this->setGameState(GAME_OVER);
+        }
+        break;
+    case GAME_OVER:
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+            this->setGameState(MENU);
+    }
+}
 void Game::render()
 {
     this->window->clear();
-    this->renderWorld();
 
-    this->player->render(*this->window);
-
-    for (auto* bullet : this->bullets)
+    switch (this->gameState)
     {
-        bullet->render(this->window);
-    }
+    case MENU:
+        this->menu->render(this->window);
+        break;
+    case GAME_PLAY:
 
-    for (auto* enemy : this->enemies)
-    {
-        enemy->render(this->window);
-    }
+        this->renderWorld();
 
-    this->renderGui();
-    for (auto* explosion : this->explosions)
-        explosion->render(this->window);
+        this->player->render(*this->window);
 
-    if (this->player->getHp() <= 0)
+        for (auto* bullet : this->bullets)
+        {
+            bullet->render(this->window);
+        }
+
+        for (auto* enemy : this->enemies)
+        {
+            enemy->render(this->window);
+        }
+
+        this->renderGui();
+        for (auto explosion : this->explosions)
+            explosion->render(this->window);
+        break;
+
+    case GAME_OVER:
         this->window->draw(this->gameOverText);
+        break;
+    }
     this->window->display();
 }
 

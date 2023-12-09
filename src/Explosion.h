@@ -4,7 +4,8 @@
 #include <iostream>
 
 class Explosion
-{private:
+{
+private:
 
     sf::Sprite shape;
     sf::Texture texture;
@@ -12,8 +13,8 @@ class Explosion
     void initShape();
 
 public:
-	Explosion(float pos_x, float pos_y);
-	virtual ~Explosion();
+    Explosion(float pos_x, float pos_y);
+    virtual ~Explosion();
 
     void update();;
     void render(sf::RenderTarget* target);

@@ -9,7 +9,14 @@
 #include "Bullet.h"
 #include "Enemy.h"
 #include "Explosion.h"
+#include "Menu.h"
 
+enum GameState
+{
+    MENU,
+    GAME_PLAY,
+    GAME_OVER,
+};
 
 class Game
 {
@@ -48,9 +55,14 @@ private:
     sf::RectangleShape playerHpBarBack;
 
     //Explosion
-    std::vector<Explosion*> explosions;
+    std::vector<std::shared_ptr<Explosion>> explosions;
     float explosionTime;
     float explosionTimeMax;
+
+    //Menu
+    Menu* menu;
+
+    GameState gameState;
 
     //private functions 
     void initWindow();
@@ -61,6 +73,7 @@ private:
     void initGui();
     void initWorld();
     void initSystem();
+    void initMenu();
 
 public:
     Game();
@@ -71,6 +84,7 @@ public:
     void update();
     void render();
     void updatePollEvents();
+    void setGameState(GameState newState);
     void updateEnemies();
     void updateWorld();
     void updateCollision();
@@ -79,6 +93,8 @@ public:
     void updateCombat();
     void updateExplosion();
     void updateGui();
+    void updateMainMenu();
     void renderGui();
     void renderWorld();
+    void resetGame();
 };

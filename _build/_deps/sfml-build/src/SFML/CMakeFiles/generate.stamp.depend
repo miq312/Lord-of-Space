@@ -1,5 +1,0 @@
-# CMake generation dependency list for this directory.
-C:/Lord-of-Space/_build/_deps/sfml-src/cmake/CompilerWarnings.cmake
-C:/Lord-of-Space/_build/_deps/sfml-src/cmake/Macros.cmake
-C:/Lord-of-Space/_build/_deps/sfml-src/src/SFML/CMakeLists.txt
-C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeParseArguments.cmake

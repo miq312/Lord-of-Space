@@ -32,6 +32,7 @@ Player::Player()
 
 	this->initTexture();
 	this->initSprite();
+	this->setPosition(500, 500);
 }
 
 Player::~Player()
@@ -87,7 +88,7 @@ void Player::updateAttack()
 
 void Player::move(const float dirX, const float dirY)
 {
-	this->sprite.move(this->moveSpeed *dirX, this->moveSpeed *dirY);
+	this->sprite.move(this->moveSpeed * dirX, this->moveSpeed * dirY);
 }
 
 void Player::update()
@@ -111,6 +112,13 @@ void Player::loseHp(const int value)
 	if (this->hp < 0)
 		this->hp = 0;
 }
+
+void Player::reset()
+{
+	this->initVaraibles();
+	this->setPosition(500, 500);
+}
+
 
 
 

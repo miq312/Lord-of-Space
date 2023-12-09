@@ -7,7 +7,7 @@ void Explosion::initShape()
 		std::cout << "ERROR::EXPLOSION::INITSHAPE::Could not load texture file" << std::endl;
 	}
 
-    this->shape.setTexture(texture);
+	this->shape.setTexture(texture);
 	this->shape.setScale(0.5, 0.5);
 }
 
