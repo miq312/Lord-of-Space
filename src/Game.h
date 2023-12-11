@@ -4,6 +4,7 @@
 #include <map>
 #include <string>
 #include <sstream>
+#include <set>
 
 #include "Player.h"
 #include "Bullet.h"
@@ -15,6 +16,7 @@ enum GameState
 {
     MENU,
     GAME_PLAY,
+    GAME_PAUSE,
     GAME_OVER,
 };
 
@@ -42,6 +44,9 @@ private:
     sf::Text pointText;
 
     sf::Text gameOverText;
+    sf::Text gameOverTextHint;
+    sf::Clock clock;
+    bool isVisible;
 
     //World
     sf::Sprite worldBackground;
@@ -93,8 +98,10 @@ public:
     void updateCombat();
     void updateExplosion();
     void updateGui();
-    void updateMainMenu();
+    void updateMenu();
     void renderGui();
     void renderWorld();
     void resetGame();
+    void updateGameOver();
+    void updateGamePlay();
 };

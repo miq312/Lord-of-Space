@@ -7,6 +7,7 @@ Explosion.cpp
 Player.cpp
 Game.cpp
 Menu.cpp
+Utilities.cpp
 )
 
 set(HEADERS

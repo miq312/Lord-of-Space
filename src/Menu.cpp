@@ -1,4 +1,5 @@
 #include "Menu.h"
+#include "Utilities.h"
 
 void Menu::initMenu()
 {
@@ -10,28 +11,28 @@ void Menu::initMenu()
 	menu[0].setFillColor(sf::Color::White);
 	menu[0].setString("Play");
 	menu[0].setCharacterSize(70);
-	menu[0].setPosition(400, 200);
+	menu[0].setPosition(500, 200);
 
 	//Ranking
-	menu[1].setFont(font);
-	menu[1].setFillColor(sf::Color::White);
-	menu[1].setString("Ranking");
-	menu[1].setCharacterSize(70);
-	menu[1].setPosition(400, 300);
+	//menu[1].setFont(font);
+	//menu[1].setFillColor(sf::Color::White);
+	//menu[1].setString("Ranking");
+	//menu[1].setCharacterSize(70);
+	//menu[1].setPosition(400, 300);
 
 	//About
-	menu[2].setFont(font);
-	menu[2].setFillColor(sf::Color::White);
-	menu[2].setString("About");
-	menu[2].setCharacterSize(70);
-	menu[2].setPosition(400, 400);
+	menu[1].setFont(font);
+	menu[1].setFillColor(sf::Color::White);
+	menu[1].setString("About");
+	menu[1].setCharacterSize(70);
+	menu[1].setPosition(500, 300);
 
 	//Exit
-	menu[3].setFont(font);
-	menu[3].setFillColor(sf::Color::White);
-	menu[3].setString("Exit");
-	menu[3].setCharacterSize(70);
-	menu[3].setPosition(400, 500);
+	menu[2].setFont(font);
+	menu[2].setFillColor(sf::Color::White);
+	menu[2].setString("Exit");
+	menu[2].setCharacterSize(70);
+	menu[2].setPosition(500, 400);
 
 	menuSelected = -1;
 }

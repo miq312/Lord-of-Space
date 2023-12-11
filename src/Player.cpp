@@ -18,11 +18,11 @@ void Player::initTexture()
 
 void Player::initVaraibles()
 {
-	this->moveSpeed = Util::Player::speed;
-	this->attackCoolDownMax = Util::Player::attackCDMax;
+	this->moveSpeed = Util::Player::movespeed;
+	this->attackCoolDownMax = Util::Player::attackcoolcownmax;
 	this->attackCoolDown = this->attackCoolDownMax;
 
-	this->hpMax = 100;
+	this->hpMax = Util::Player::hpmax;
 	this->hp = this->hpMax;
 }
 

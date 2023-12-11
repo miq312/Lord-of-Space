@@ -1,5 +1,5 @@
 #include "Game.h"
-//#include "Utilities.h"
+#include "Utilities.h"
 
 Game::Game()
 {
@@ -72,14 +72,14 @@ void Game::initPlayer()
 
 void Game::initEnemies()
 {
-    this->spawnTimerMax = 50.f;
+    this->spawnTimerMax = Util::Game::spawnTMax;
     this->spawnTimer = this->spawnTimerMax;
 }
 
 void Game::initExplosion()
 {
-    this->explosionTimeMax = 150.f;
-    this->explosionTime = 0.f;
+    this->explosionTimeMax = Util::Game::explosiontimemax;
+    this->explosionTime = Util::Game::explosiontime;
 }
 
 void Game::initGui()
@@ -100,6 +100,15 @@ void Game::initGui()
     this->gameOverText.setPosition(
         this->window->getSize().x / 2.f - this->gameOverText.getGlobalBounds().width / 2.f,
         this->window->getSize().y / 2.f - this->gameOverText.getGlobalBounds().height / 2.f);
+
+    this->gameOverTextHint.setFont(this->font);
+    this->gameOverTextHint.setCharacterSize(30);
+    this->gameOverTextHint.setFillColor(sf::Color(128, 128, 128));
+    this->gameOverTextHint.setString("Press space to go to the menu");
+    this->gameOverTextHint.setPosition(
+        this->window->getSize().x / 2.f - this->gameOverText.getGlobalBounds().width / 2.f,
+        this->window->getSize().y - 100);
+
 
 
     //Init PlayerGui
@@ -128,7 +137,6 @@ void Game::initMenu()
 {
     this->menu = new Menu(this->window->getSize().x, this->window->getSize().y);
 }
-
 
 void Game::updatePollEvents()
 {
@@ -311,7 +319,7 @@ void Game::updateGui()
     this->playerHpBar.setSize(sf::Vector2f(300.f * hpPercent, this->playerHpBar.getSize().y));
 }
 
-void Game::updateMainMenu()
+void Game::updateMenu()
 {
     static bool arrowKeyPressed = false;
 
@@ -332,10 +340,12 @@ void Game::updateMainMenu()
         switch (menu->menuPressed())
         {
         case 1:
-            gameState = GAME_PLAY;
+            this->setGameState(GAME_PLAY);
             break;
         case 2:
-            gameState = GAME_PLAY;
+            break;
+        case 3:
+            this->window->close();
             break;
         }
     }
@@ -361,7 +371,36 @@ void Game::resetGame()
     this->bullets.clear();
     this->enemies.clear();
     this->explosions.clear();
-    this->gameState = MENU;
+    this->setGameState(MENU);
+}
+
+void Game::updateGameOver()
+{
+    isVisible = static_cast<int>(clock.getElapsedTime().asSeconds()) % 2 == 0;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+    {
+        this->setGameState(MENU);
+    }
+}
+
+void Game::updateGamePlay()
+{
+    this->updateInit();
+    this->player->update();
+    this->updateCollision();
+    this->updateBullets();
+    this->updateEnemies();
+    this->updateCombat();
+    this->updateExplosion();
+    this->updateGui();
+    this->updateWorld();
+    if (this->player->getHp() <= 0)
+    {
+        this->resetGame();
+        this->setGameState(GAME_OVER);
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+        this->setGameState(GAME_PAUSE);
 }
 
 void Game::update()
@@ -369,28 +408,19 @@ void Game::update()
     switch (gameState)
     {
     case MENU:
-        this->updateMainMenu();
+        this->updateMenu();
         break;
 
     case GAME_PLAY:
-        this->updateInit();
-        this->player->update();
-        this->updateCollision();
-        this->updateBullets();
-        this->updateEnemies();
-        this->updateCombat();
-        this->updateExplosion();
-        this->updateGui();
-        this->updateWorld();
-        if (this->player->getHp() <= 0)
-        {
-            this->resetGame();
-            this->setGameState(GAME_OVER);
-        }
+        this->updateGamePlay();
         break;
+
+    case GAME_PAUSE:
+        break;
+
     case GAME_OVER:
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-            this->setGameState(MENU);
+        this->updateGameOver();
+        break;
     }
 }
 void Game::render()
@@ -419,12 +449,16 @@ void Game::render()
         }
 
         this->renderGui();
-        for (auto explosion : this->explosions)
+        for (auto& explosion : this->explosions)
             explosion->render(this->window);
         break;
-
+    case GAME_PAUSE:
+        this->window->draw(this->gameOverText);
+        break;
     case GAME_OVER:
         this->window->draw(this->gameOverText);
+        if (isVisible)
+            this->window->draw(this->gameOverTextHint);
         break;
     }
     this->window->display();

@@ -1,24 +1,38 @@
 #pragma once
+
 namespace Util
 {
-	namespace Game
-	{
-		float spawnTMax{ 50.f };
-	}
+    namespace Game
+    {
+        extern float spawnTMax;
+        extern float explosiontimemax;
+        extern float explosiontime;
+    }
 
-	namespace Player 
-	{
-		float speed{ 3.5f };
-		float attackCDMax{ 10.f };
-	}
+    namespace Player
+    {
+        extern float movespeed;
+        extern float attackcoolcownmax;
+        extern int hpmax;
+    }
 
-	namespace Enemy
-	{
-		
-	}
+    namespace Enemy
+    {
 
-	namespace Bullet
-	{
+    }
 
-	}
+    namespace Bullet
+    {
+
+    }
+
+    namespace Explosion
+    {
+
+    }
+
+    namespace Menu
+    {
+
+    }
 }
