@@ -10,6 +10,9 @@ private:
 	sf::Text menu[4];
 	sf::Font font;
 
+	sf::Texture backgroundTexture;
+	sf::Sprite backgroundSprite;
+
 	void initMenu();
 
 public:
@@ -17,6 +20,7 @@ public:
 	virtual ~Menu();
 
 	void render(sf::RenderWindow* window);
+	void initBackground();
 	void moveUp();
 	void moveDown();
 	int menuPressed();

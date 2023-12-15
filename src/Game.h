@@ -15,6 +15,7 @@
 enum GameState
 {
     MENU,
+    MENU_ABOUT,
     GAME_PLAY,
     GAME_PAUSE,
     GAME_OVER,
@@ -48,6 +49,8 @@ private:
     sf::Clock clock;
     bool isVisible;
 
+    sf::Text pauseText;
+
     //World
     sf::Sprite worldBackground;
     sf::Texture worldBackgroundTexture;
@@ -66,6 +69,7 @@ private:
 
     //Menu
     Menu* menu;
+    sf::Text aboutText;
 
     GameState gameState;
 
@@ -104,4 +108,7 @@ public:
     void resetGame();
     void updateGameOver();
     void updateGamePlay();
+    void updateGamePause();
+    void updateAboutMenu();
+    void renderAboutMenu();
 };

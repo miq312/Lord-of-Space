@@ -109,6 +109,12 @@ void Game::initGui()
         this->window->getSize().x / 2.f - this->gameOverText.getGlobalBounds().width / 2.f,
         this->window->getSize().y - 100);
 
+    this->pauseText.setFont(this->font);
+    this->pauseText.setCharacterSize(30);
+    this->pauseText.setFillColor(sf::Color::White);
+    this->pauseText.setString("PAUSE");
+    this->pauseText.setOrigin(this->pauseText.getGlobalBounds().width / 2.f, this->pauseText.getGlobalBounds().height / 2.f);
+    this->pauseText.setPosition(this->window->getSize().x / 2.f, this->window->getSize().y / 2.f);
 
 
     //Init PlayerGui
@@ -118,6 +124,31 @@ void Game::initGui()
 
     this->playerHpBarBack = this->playerHpBar;
     this->playerHpBarBack.setFillColor(sf::Color(25, 25, 25, 200));
+
+    std::cout << "about" << std::endl;
+    this->aboutText.setPosition(10, 10);
+    this->aboutText.setFont(this->font);
+    this->aboutText.setCharacterSize(30);
+    this->aboutText.setFillColor(sf::Color::Blue);
+    this->aboutText.setString("Welcome to Lords of Space!\n\n"
+        "Lords of Space is an exciting space-themed shooter game where you, as the player,\n"
+        "take control of a powerful spaceship to defend against waves of enemy invaders.\n\n"
+        "Controls:\n"
+        " - Use 'W', 'A', 'S', 'D' to move your spaceship.\n"
+        " - Press the left mouse button to shoot bullets and eliminate enemies.\n"
+        " - Avoid colliding with enemies to maintain your spaceship's health.\n"
+        " - Collect points by destroying enemies and aim for the highest score!\n\n"
+        "Future Improvements:\n"
+        " - Expand gameplay with even more challenging enemy waves and unique adversaries.\n"
+        " - Enhance visual experience with cutting-edge graphics and mesmerizing visual effects.\n"
+        " - Introduce new gameplay elements, such as power-ups and special abilities for your spaceship.\n"
+        " - Implement a leaderboard system to allow players to compete for high scores globally.\n"
+        " - Unlock achievements and rewards to become the ultimate Lord of Space!\n\n"
+        "Press 'Space' to return to the main menu and embark on your evolving space adventure!"
+
+    );
+
+
 }
 
 void Game::initWorld()
@@ -125,7 +156,7 @@ void Game::initWorld()
     if (!this->worldBackgroundTexture.loadFromFile("../../Images/world.png"))
         std::cout << "FAIL::GAME::INITWORLD::Failed load texture file" << std::endl;
     this->worldBackground.setTexture(this->worldBackgroundTexture);
-    this->worldBackground.setScale(1.95, 1.55);  //poprawic
+    this->worldBackground.setScale(0.5, 0.5);  //poprawic
 }
 
 void Game::initSystem()
@@ -343,6 +374,7 @@ void Game::updateMenu()
             this->setGameState(GAME_PLAY);
             break;
         case 2:
+            this->setGameState(MENU_ABOUT);
             break;
         case 3:
             this->window->close();
@@ -403,6 +435,27 @@ void Game::updateGamePlay()
         this->setGameState(GAME_PAUSE);
 }
 
+void Game::updateGamePause()
+{
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+    {
+        this->setGameState(GAME_PLAY);
+    }
+}
+
+void Game::updateAboutMenu()
+{
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+    {
+        this->gameState = MENU;
+    }
+}
+
+void Game::renderAboutMenu()
+{
+    this->window->draw(aboutText);
+}
+
 void Game::update()
 {
     switch (gameState)
@@ -410,12 +463,16 @@ void Game::update()
     case MENU:
         this->updateMenu();
         break;
+    case MENU_ABOUT:
+        this->updateAboutMenu();
+        break;
 
     case GAME_PLAY:
         this->updateGamePlay();
         break;
 
     case GAME_PAUSE:
+        this->updateGamePause();
         break;
 
     case GAME_OVER:
@@ -432,6 +489,11 @@ void Game::render()
     case MENU:
         this->menu->render(this->window);
         break;
+
+    case MENU_ABOUT:
+        this->renderAboutMenu();
+        break;
+
     case GAME_PLAY:
 
         this->renderWorld();
@@ -452,10 +514,12 @@ void Game::render()
         for (auto& explosion : this->explosions)
             explosion->render(this->window);
         break;
+
     case GAME_PAUSE:
-        this->window->draw(this->gameOverText);
+        this->window->draw(this->pauseText);
         break;
     case GAME_OVER:
+
         this->window->draw(this->gameOverText);
         if (isVisible)
             this->window->draw(this->gameOverTextHint);

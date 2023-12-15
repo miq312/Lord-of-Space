@@ -1,38 +1,36 @@
 #include "Menu.h"
 #include "Utilities.h"
 
+float windowSizeX = 1200.f;
+float windowSizeY = 850.f;
+
 void Menu::initMenu()
 {
+
 	if (!font.loadFromFile("../../Fonts/calibri.ttf"))
 		std::cout << "FAIL::GAME::INITGUI::Failed load font" << std::endl;
 
-	//Play
+	// Play
 	menu[0].setFont(font);
 	menu[0].setFillColor(sf::Color::White);
 	menu[0].setString("Play");
-	menu[0].setCharacterSize(70);
-	menu[0].setPosition(500, 200);
+	menu[0].setCharacterSize(100);
+	menu[0].setPosition(windowSizeX / 2 - menu[0].getLocalBounds().width / 2, windowSizeY / 2 - menu[0].getLocalBounds().height / 2 - 100);
 
-	//Ranking
-	//menu[1].setFont(font);
-	//menu[1].setFillColor(sf::Color::White);
-	//menu[1].setString("Ranking");
-	//menu[1].setCharacterSize(70);
-	//menu[1].setPosition(400, 300);
-
-	//About
+	// About
 	menu[1].setFont(font);
 	menu[1].setFillColor(sf::Color::White);
 	menu[1].setString("About");
-	menu[1].setCharacterSize(70);
-	menu[1].setPosition(500, 300);
+	menu[1].setCharacterSize(100);
+	menu[1].setPosition(windowSizeX / 2 - menu[1].getLocalBounds().width / 2, windowSizeY / 2 - menu[1].getLocalBounds().height / 2);
 
-	//Exit
+	// Exit
 	menu[2].setFont(font);
 	menu[2].setFillColor(sf::Color::White);
 	menu[2].setString("Exit");
-	menu[2].setCharacterSize(70);
-	menu[2].setPosition(500, 400);
+	menu[2].setCharacterSize(100);
+	menu[2].setPosition(windowSizeX / 2 - menu[2].getLocalBounds().width / 2, windowSizeY / 2 - menu[2].getLocalBounds().height / 2 + 100);
+
 
 	menuSelected = -1;
 }
@@ -40,6 +38,7 @@ void Menu::initMenu()
 Menu::Menu(float width, float height)
 {
 	this->initMenu();
+	this->initBackground();
 }
 Menu::~Menu()
 {
@@ -47,10 +46,24 @@ Menu::~Menu()
 
 void Menu::render(sf::RenderWindow* window)
 {
+	window->draw(backgroundSprite);
+
 	for (int i = 0; i < 4; i++)
 	{
 		window->draw(menu[i]);
 	}
+}
+
+void Menu::initBackground()
+{
+	if (!backgroundTexture.loadFromFile("../../Images/menu.png"))
+	{
+		std::cout << "FAIL::MENU::LOADBACKGROUNF::Failed to load background image" << std::endl;
+	}
+
+	backgroundSprite.setTexture(backgroundTexture);
+	backgroundSprite.setScale(windowSizeX / backgroundSprite.getLocalBounds().width, windowSizeY / backgroundSprite.getLocalBounds().height);
+
 }
 
 void Menu::moveUp()
