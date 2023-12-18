@@ -5,7 +5,7 @@ void Player::initSprite()
 {
 	this->sprite.setTexture(this->texture);
 
-	this->sprite.scale(0.1f, 0.1f);
+	this->sprite.scale(Util::Player::scaleX, Util::Player::scaleY);
 }
 
 void Player::initTexture()
@@ -32,7 +32,7 @@ Player::Player()
 
 	this->initTexture();
 	this->initSprite();
-	this->setPosition(500, 500);
+	this->setPosition(Util::Player::startPositionX, Util::Player::startPositionY);
 }
 
 Player::~Player()
@@ -116,7 +116,7 @@ void Player::loseHp(const int value)
 void Player::reset()
 {
 	this->initVaraibles();
-	this->setPosition(500, 500);
+	this->setPosition(Util::Player::startPositionX, Util::Player::startPositionY);
 }
 
 

@@ -25,7 +25,7 @@ class Game
 {
 private:
     //Window
-    sf::RenderWindow* window;
+    std::unique_ptr<sf::RenderWindow> window;
 
     //Reasurces
     std::map<std::string, sf::Texture*> textures;
@@ -33,7 +33,7 @@ private:
     bool isShooting = false;
 
     //Player
-    Player* player;
+    std::unique_ptr<Player> player;
 
     //Enemies
     float spawnTimer;
@@ -102,6 +102,12 @@ public:
     void updateCombat();
     void updateExplosion();
     void updateGui();
+    void loadFont();
+    void initPointText();
+    void initGameOverText();
+    void initPauseText();
+    void initPlayerGui();
+    void initAboutText();
     void updateMenu();
     void renderGui();
     void renderWorld();

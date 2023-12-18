@@ -18,8 +18,7 @@ Game::Game()
 
 Game::~Game()
 {
-    delete this->window;
-    delete this->player;
+    this->player.reset();
 
     for (auto& i : this->textures)
     {
@@ -53,7 +52,7 @@ void Game::run()
 
 void Game::initWindow()
 {
-    this->window = new sf::RenderWindow(sf::VideoMode(1200, 850), "Lords of space", sf::Style::Close | sf::Style::Titlebar);
+    this->window = std::make_unique<sf::RenderWindow>(sf::VideoMode(Util::Game::windowSizeX, Util::Game::windowSizeY), "Lords of space", sf::Style::Close | sf::Style::Titlebar);
     this->window->setFramerateLimit(144);
     this->window->setVerticalSyncEnabled(false);
 }
@@ -67,7 +66,7 @@ void Game::initTextures()
 
 void Game::initPlayer()
 {
-    this->player = new Player();
+    this->player = std::make_unique<Player>();
 }
 
 void Game::initEnemies()
@@ -84,15 +83,32 @@ void Game::initExplosion()
 
 void Game::initGui()
 {
+    this->loadFont();
+    this->initPointText();
+    this->initGameOverText();
+    this->initPauseText();
+    this->initPlayerGui();
+    this->initAboutText();
+}
+
+void Game::loadFont()
+{
+
     if (!this->font.loadFromFile("../../Fonts/calibri.ttf"))
         std::cout << "FAIL::GAME::INITGUI::Failed load font" << std::endl;
+}
 
+void Game::initPointText()
+{
     this->pointText.setPosition(1000, 10);
     this->pointText.setFont(this->font);
     this->pointText.setCharacterSize(30);
     this->pointText.setFillColor(sf::Color::White);
     this->pointText.setString("test");
+}
 
+void Game::initGameOverText()
+{
     this->gameOverText.setFont(this->font);
     this->gameOverText.setCharacterSize(80);
     this->gameOverText.setFillColor(sf::Color::Red);
@@ -108,28 +124,34 @@ void Game::initGui()
     this->gameOverTextHint.setPosition(
         this->window->getSize().x / 2.f - this->gameOverText.getGlobalBounds().width / 2.f,
         this->window->getSize().y - 100);
+}
 
+void Game::initPauseText()
+{
     this->pauseText.setFont(this->font);
     this->pauseText.setCharacterSize(30);
     this->pauseText.setFillColor(sf::Color::White);
-    this->pauseText.setString("PAUSE");
+    this->pauseText.setString("                 PAUSE\n"
+                              "Press 'P' to return to menu\n");
     this->pauseText.setOrigin(this->pauseText.getGlobalBounds().width / 2.f, this->pauseText.getGlobalBounds().height / 2.f);
     this->pauseText.setPosition(this->window->getSize().x / 2.f, this->window->getSize().y / 2.f);
+}
 
-
-    //Init PlayerGui
+void Game::initPlayerGui()
+{
     this->playerHpBar.setSize(sf::Vector2f(300.f, 25.f));
     this->playerHpBar.setFillColor(sf::Color::Red);
     this->playerHpBar.setPosition(sf::Vector2f(20.f, 20.f));
-
     this->playerHpBarBack = this->playerHpBar;
     this->playerHpBarBack.setFillColor(sf::Color(25, 25, 25, 200));
+}
 
-    std::cout << "about" << std::endl;
+void Game::initAboutText()
+{
     this->aboutText.setPosition(10, 10);
     this->aboutText.setFont(this->font);
     this->aboutText.setCharacterSize(30);
-    this->aboutText.setFillColor(sf::Color::Blue);
+    this->aboutText.setFillColor(sf::Color(64,64,64));
     this->aboutText.setString("Welcome to Lords of Space!\n\n"
         "Lords of Space is an exciting space-themed shooter game where you, as the player,\n"
         "take control of a powerful spaceship to defend against waves of enemy invaders.\n\n"
@@ -147,8 +169,6 @@ void Game::initGui()
         "Press 'Space' to return to the main menu and embark on your evolving space adventure!"
 
     );
-
-
 }
 
 void Game::initWorld()
@@ -236,7 +256,6 @@ void Game::updateBullets()
     }
 }
 
-
 void Game::updateEnemies()
 {
     this->spawnTimer += 0.5f;
@@ -303,7 +322,6 @@ void Game::updateExplosion()
         this->explosionTime = 0;
     }
 }
-
 
 void Game::updateCollision()
 {
@@ -382,7 +400,6 @@ void Game::updateMenu()
         }
     }
 }
-
 
 void Game::renderGui()
 {
@@ -480,6 +497,7 @@ void Game::update()
         break;
     }
 }
+
 void Game::render()
 {
     this->window->clear();
@@ -487,7 +505,7 @@ void Game::render()
     switch (this->gameState)
     {
     case MENU:
-        this->menu->render(this->window);
+        this->menu->render(*this->window);
         break;
 
     case MENU_ABOUT:
@@ -502,17 +520,17 @@ void Game::render()
 
         for (auto* bullet : this->bullets)
         {
-            bullet->render(this->window);
+            bullet->render(this->window.get());
         }
 
         for (auto* enemy : this->enemies)
         {
-            enemy->render(this->window);
+            enemy->render(this->window.get());
         }
 
         this->renderGui();
         for (auto& explosion : this->explosions)
-            explosion->render(this->window);
+            explosion->render(this->window.get());
         break;
 
     case GAME_PAUSE:

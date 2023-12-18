@@ -1,4 +1,5 @@
 #include "Explosion.h"
+#include "Utilities.h"
 
 void Explosion::initShape()
 {
@@ -8,7 +9,7 @@ void Explosion::initShape()
 	}
 
 	this->shape.setTexture(texture);
-	this->shape.setScale(0.5, 0.5);
+	this->shape.setScale(Util::Explosion::scaleX, Util::Explosion::scaleY);
 }
 
 Explosion::Explosion(float pos_x, float pos_y)

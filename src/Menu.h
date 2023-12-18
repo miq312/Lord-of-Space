@@ -7,19 +7,19 @@ class Menu
 {
 private:
 	int menuSelected;
-	sf::Text menu[4];
+	sf::Text menu[3];
 	sf::Font font;
 
 	sf::Texture backgroundTexture;
 	sf::Sprite backgroundSprite;
-
+	
 	void initMenu();
 
 public:
 	Menu(float width, float height);
 	virtual ~Menu();
 
-	void render(sf::RenderWindow* window);
+	void render(sf::RenderWindow& window);
 	void initBackground();
 	void moveUp();
 	void moveDown();
