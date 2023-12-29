@@ -73,6 +73,7 @@ private:
 
     GameState gameState;
 
+    std::vector<unsigned> playerScores;
     //private functions 
     void initWindow();
     void initTextures();
@@ -117,4 +118,6 @@ public:
     void updateGamePause();
     void updateAboutMenu();
     void renderAboutMenu();
+    void updateRanking();
+    void renderRanking();
 };

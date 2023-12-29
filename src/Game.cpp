@@ -132,7 +132,8 @@ void Game::initPauseText()
     this->pauseText.setCharacterSize(30);
     this->pauseText.setFillColor(sf::Color::White);
     this->pauseText.setString("                 PAUSE\n"
-                              "Press 'P' to return to menu\n");
+                              "Press 'G' to return to game\n"
+                              "Press 'M' to return to menu\n");
     this->pauseText.setOrigin(this->pauseText.getGlobalBounds().width / 2.f, this->pauseText.getGlobalBounds().height / 2.f);
     this->pauseText.setPosition(this->window->getSize().x / 2.f, this->window->getSize().y / 2.f);
 }
@@ -166,8 +167,9 @@ void Game::initAboutText()
         " - Introduce new gameplay elements, such as power-ups and special abilities for your spaceship.\n"
         " - Implement a leaderboard system to allow players to compete for high scores globally.\n"
         " - Unlock achievements and rewards to become the ultimate Lord of Space!\n\n"
-        "Press 'Space' to return to the main menu and embark on your evolving space adventure!"
-
+        "Press 'Space' to return to the main menu and embark on your evolving space adventure!\n\n"
+        "Lords of Space was created by Michal Lazarz, a passionate game developer,\n"
+        "Follow me on https://github.com/miq312 for updates and more exciting projects.\n"
     );
 }
 
@@ -426,8 +428,15 @@ void Game::resetGame()
 void Game::updateGameOver()
 {
     isVisible = static_cast<int>(clock.getElapsedTime().asSeconds()) % 2 == 0;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-    {
+
+    static bool rankingUpdated = false;
+    if (!rankingUpdated) {
+        renderRanking();
+        rankingUpdated = true;
+    }
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+        rankingUpdated = false;
         this->setGameState(MENU);
     }
 }
@@ -445,6 +454,7 @@ void Game::updateGamePlay()
     this->updateWorld();
     if (this->player->getHp() <= 0)
     {
+        this->updateRanking();
         this->resetGame();
         this->setGameState(GAME_OVER);
     }
@@ -454,9 +464,14 @@ void Game::updateGamePlay()
 
 void Game::updateGamePause()
 {
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))
     {
         this->setGameState(GAME_PLAY);
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
+    {
+        this->setGameState(MENU);
+        this->resetGame();
     }
 }
 
@@ -471,6 +486,29 @@ void Game::updateAboutMenu()
 void Game::renderAboutMenu()
 {
     this->window->draw(aboutText);
+}
+
+void Game::updateRanking()
+{
+    playerScores.push_back(this->points);
+
+    std::sort(playerScores.begin(), playerScores.end(), std::greater<unsigned>());
+
+    if (playerScores.size() > 10) {
+        playerScores.resize(10);
+    }
+}
+
+
+void Game::renderRanking()
+{
+    std::cout << "===== RANKING =====" << std::endl;
+
+    for (size_t i = 0; i < playerScores.size(); i++) {
+        std::cout << i + 1 << ". " << playerScores[i] << " points" << std::endl;
+    }
+
+    std::cout << "===================" << std::endl;
 }
 
 void Game::update()
