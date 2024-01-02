@@ -1,4 +1,6 @@
 #pragma once
+#include <cstdlib>
+#include <string>
 
 namespace Util
 {
@@ -9,6 +11,7 @@ namespace Util
         extern float explosiontime;
         extern float windowSizeX;
         extern float windowSizeY;
+        extern std::string abouttext;
     }
 
     namespace Player
@@ -24,7 +27,9 @@ namespace Util
 
     namespace Enemy
     {
-
+        extern int getRandomPointCount();
+        extern float radiusconv;
+        extern float speedconv;
     }
 
     namespace Bullet

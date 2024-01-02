@@ -153,24 +153,7 @@ void Game::initAboutText()
     this->aboutText.setFont(this->font);
     this->aboutText.setCharacterSize(30);
     this->aboutText.setFillColor(sf::Color(64,64,64));
-    this->aboutText.setString("Welcome to Lords of Space!\n\n"
-        "Lords of Space is an exciting space-themed shooter game where you, as the player,\n"
-        "take control of a powerful spaceship to defend against waves of enemy invaders.\n\n"
-        "Controls:\n"
-        " - Use 'W', 'A', 'S', 'D' to move your spaceship.\n"
-        " - Press the left mouse button to shoot bullets and eliminate enemies.\n"
-        " - Avoid colliding with enemies to maintain your spaceship's health.\n"
-        " - Collect points by destroying enemies and aim for the highest score!\n\n"
-        "Future Improvements:\n"
-        " - Expand gameplay with even more challenging enemy waves and unique adversaries.\n"
-        " - Enhance visual experience with cutting-edge graphics and mesmerizing visual effects.\n"
-        " - Introduce new gameplay elements, such as power-ups and special abilities for your spaceship.\n"
-        " - Implement a leaderboard system to allow players to compete for high scores globally.\n"
-        " - Unlock achievements and rewards to become the ultimate Lord of Space!\n\n"
-        "Press 'Space' to return to the main menu and embark on your evolving space adventure!\n\n"
-        "Lords of Space was created by Michal Lazarz, a passionate game developer,\n"
-        "Follow me on https://github.com/miq312 for updates and more exciting projects.\n"
-    );
+    this->aboutText.setString(Util::Game::abouttext);
 }
 
 void Game::initWorld()
@@ -327,33 +310,25 @@ void Game::updateExplosion()
 
 void Game::updateCollision()
 {
-    //left screen collision
     if (this->player->getBounds().left < 0.f)
     {
         this->player->setPosition(0.f, this->player->getBounds().top);
     }
 
-    //right screen collision
     else if (this->player->getBounds().left + this->player->getBounds().width >= this->window->getSize().x)
     {
         this->player->setPosition(this->window->getSize().x - this->player->getBounds().width, this->player->getBounds().top);
     }
 
-    //top screen collision
     if (this->player->getBounds().top < 0.f)
     {
         this->player->setPosition(this->player->getBounds().left, 0.f);
     }
 
-    //bottom screen collision
     else if (this->player->getBounds().top + this->player->getBounds().height >= this->window->getSize().y)
     {
         this->player->setPosition(this->player->getBounds().left, this->window->getSize().y - this->player->getBounds().height);
     }
-}
-
-void Game::updateWorld()
-{
 }
 
 void Game::updateGui()
@@ -363,9 +338,7 @@ void Game::updateGui()
 
     this->pointText.setString(ss.str());
 
-
     //Update PlayerGui
-
     float hpPercent = static_cast<float>(this->player->getHp()) / this->player->getHpMax();
     this->playerHpBar.setSize(sf::Vector2f(300.f * hpPercent, this->playerHpBar.getSize().y));
 }
@@ -451,7 +424,6 @@ void Game::updateGamePlay()
     this->updateCombat();
     this->updateExplosion();
     this->updateGui();
-    this->updateWorld();
     if (this->player->getHp() <= 0)
     {
         this->updateRanking();

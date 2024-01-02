@@ -3,9 +3,8 @@
 
 void Enemy::initVaraibles()
 {
-	this->pointCount = rand() % 8 + 3;
-	this->type = 0;
-	this->speed = static_cast<float>(this->pointCount / 3);
+	this->pointCount = Util::Enemy::getRandomPointCount();
+	this->speed = static_cast<float>(this->pointCount / Util::Enemy::speedconv);
 	this->hp = this->hpMax;
 	this->hpMax = static_cast<int>(this->pointCount);
 	this->damage = this->pointCount;
@@ -19,10 +18,9 @@ void Enemy::initShape()
 	{
 		std::cout << "ERROR::PLAYER::INITTEXTURE::Could not load texture file" << std::endl;
 	}
-	this->shape.setRadius(this->pointCount * 7);
+	this->shape.setRadius(this->pointCount * Util::Enemy::radiusconv);
 	this->shape.setPointCount(this->pointCount);
 	this->shape.setTexture(&texture);
-	//this->shape.setFillColor(sf::Color(rand() % 255 + 1, rand() % 255 + 1, rand() % 255 + 1, 255));
 }
 
 Enemy::Enemy(float pos_x, float pos_y)

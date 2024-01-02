@@ -96,7 +96,6 @@ public:
     void updatePollEvents();
     void setGameState(GameState newState);
     void updateEnemies();
-    void updateWorld();
     void updateCollision();
     void updateInit();
     void updateBullets();

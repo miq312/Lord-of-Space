@@ -9,8 +9,7 @@ private:
 	sf::CircleShape shape;
 	sf::Texture texture;
 
-	unsigned pointCount;
-	int type;
+	int pointCount;
 	float speed;
 	int hp;
 	int hpMax;
