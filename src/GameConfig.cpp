@@ -1,6 +1,6 @@
-#include "Utilities.h"
+#include "GameConfig.h"
 
-namespace Util
+namespace Config
 {
     namespace Game
     {

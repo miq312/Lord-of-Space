@@ -6,10 +6,10 @@
 class Bullet
 {
 private:
-	sf::Sprite shape;
+	sf::Sprite shape{};
 
-	sf::Vector2f direction;
-	float movespeed;
+	sf::Vector2f direction{};
+	float movespeed{};
 
 public:
 	Bullet();

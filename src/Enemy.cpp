@@ -1,10 +1,10 @@
 #include "Enemy.h"
-#include "Utilities.h"
+#include "GameConfig.h"
 
 void Enemy::initVaraibles()
 {
-	this->pointCount = Util::Enemy::getRandomPointCount();
-	this->speed = static_cast<float>(this->pointCount / Util::Enemy::speedconv);
+	this->pointCount = Config::Enemy::getRandomPointCount();
+	this->speed = static_cast<float>(this->pointCount / Config::Enemy::speedconv);
 	this->hp = this->hpMax;
 	this->hpMax = static_cast<int>(this->pointCount);
 	this->damage = this->pointCount;
@@ -18,7 +18,7 @@ void Enemy::initShape()
 	{
 		std::cout << "ERROR::PLAYER::INITTEXTURE::Could not load texture file" << std::endl;
 	}
-	this->shape.setRadius(this->pointCount * Util::Enemy::radiusconv);
+	this->shape.setRadius(this->pointCount * Config::Enemy::radiusconv);
 	this->shape.setPointCount(this->pointCount);
 	this->shape.setTexture(&texture);
 }

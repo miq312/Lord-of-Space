@@ -16,6 +16,7 @@ enum GameState
 {
     MENU,
     MENU_ABOUT,
+    MENU_RANKING,
     GAME_PLAY,
     GAME_PAUSE,
     GAME_OVER,
@@ -25,55 +26,55 @@ class Game
 {
 private:
     //Window
-    std::unique_ptr<sf::RenderWindow> window;
+    std::unique_ptr<sf::RenderWindow> window{};
 
     //Reasurces
-    std::map<std::string, sf::Texture*> textures;
-    std::vector<Bullet*> bullets;
+    std::map<std::string, sf::Texture*> textures{};
+    std::vector<Bullet*> bullets{};
     bool isShooting = false;
 
     //Player
-    std::unique_ptr<Player> player;
+    std::unique_ptr<Player> player{};
 
     //Enemies
-    float spawnTimer;
-    float spawnTimerMax;
-    std::vector<Enemy*> enemies;
+    float spawnTimer{};
+    float spawnTimerMax{};
+    std::vector<Enemy*> enemies{};
 
     //GUI
-    sf::Font font;
-    sf::Text pointText;
+    sf::Font font{};
+    sf::Text pointText{};
 
-    sf::Text gameOverText;
-    sf::Text gameOverTextHint;
-    sf::Clock clock;
-    bool isVisible;
+    sf::Text gameOverText{};
+    sf::Text gameOverTextHint{};
+    sf::Clock clock{};
+    bool isVisible{};
 
-    sf::Text pauseText;
+    sf::Text pauseText{};
 
     //World
-    sf::Sprite worldBackground;
-    sf::Texture worldBackgroundTexture;
+    sf::Sprite worldBackground{};
+    sf::Texture worldBackgroundTexture{};
 
     //System
-    unsigned points;
+    unsigned points{};
 
     //PlayerGui
-    sf::RectangleShape playerHpBar;
-    sf::RectangleShape playerHpBarBack;
+    sf::RectangleShape playerHpBar{};
+    sf::RectangleShape playerHpBarBack{};
 
     //Explosion
-    std::vector<std::shared_ptr<Explosion>> explosions;
-    float explosionTime;
-    float explosionTimeMax;
+    std::vector<std::shared_ptr<Explosion>> explosions{};
+    float explosionTime{};
+    float explosionTimeMax{};
 
     //Menu
-    Menu* menu;
-    sf::Text aboutText;
+    Menu* menu{};
+    sf::Text aboutText{};
 
-    GameState gameState;
+    GameState gameState{};
 
-    std::vector<unsigned> playerScores;
+    std::vector<unsigned> playerScores{};
     //private functions 
     void initWindow();
     void initTextures();
@@ -117,6 +118,6 @@ public:
     void updateGamePause();
     void updateAboutMenu();
     void renderAboutMenu();
+    void updateRankingMenu();
     void updateRanking();
-    void renderRanking();
 };

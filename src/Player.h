@@ -7,15 +7,15 @@
 class Player
 {
 private:
-	sf::Sprite sprite;
-	sf::Texture texture;
+	sf::Sprite sprite{};
+	sf::Texture texture{};
 
-	float moveSpeed;
-	float attackCoolDown;
-	float attackCoolDownMax;
+	float moveSpeed{};
+	float attackCoolDown{};
+	float attackCoolDownMax{};
 
-	int hp;
-	int hpMax;
+	int hp{};
+	int hpMax{};
 
 	void initSprite();
 	void initTexture();

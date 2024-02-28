@@ -7,8 +7,8 @@ class Explosion
 {
 private:
 
-    sf::Sprite shape;
-    sf::Texture texture;
+    sf::Sprite shape{};
+    sf::Texture texture{};
 
     void initShape();
 
@@ -16,7 +16,7 @@ public:
     Explosion(float pos_x, float pos_y);
     virtual ~Explosion();
 
-    void update();;
+    void update();
     void render(sf::RenderTarget* target);
     sf::Vector2f getPosition() const;
 };

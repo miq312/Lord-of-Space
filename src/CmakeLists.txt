@@ -1,24 +1,22 @@
 set(SOURCES
 main.cpp 
-Boss.cpp 
 Bullet.cpp 
 Enemy.cpp 
 Explosion.cpp
 Player.cpp
 Game.cpp
 Menu.cpp
-Utilities.cpp
+GameConfig.cpp
 )
 
 set(HEADERS
-Boss.h 
 Bullet.h
 Enemy.h
 Explosion.h
 Game.h
 Player.h
 Menu.h
-Utilities.h    
+GameConfig.h    
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})

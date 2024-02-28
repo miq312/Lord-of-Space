@@ -1,5 +1,5 @@
 #include "Game.h"
-#include "Utilities.h"
+#include "GameConfig.h"
 
 Game::Game()
 {
@@ -52,7 +52,7 @@ void Game::run()
 
 void Game::initWindow()
 {
-    this->window = std::make_unique<sf::RenderWindow>(sf::VideoMode(Util::Game::windowSizeX, Util::Game::windowSizeY), "Lords of space", sf::Style::Close | sf::Style::Titlebar);
+    this->window = std::make_unique<sf::RenderWindow>(sf::VideoMode(Config::Game::windowSizeX, Config::Game::windowSizeY), "Lords of space", sf::Style::Close | sf::Style::Titlebar);
     this->window->setFramerateLimit(144);
     this->window->setVerticalSyncEnabled(false);
 }
@@ -71,14 +71,14 @@ void Game::initPlayer()
 
 void Game::initEnemies()
 {
-    this->spawnTimerMax = Util::Game::spawnTMax;
+    this->spawnTimerMax = Config::Game::spawnTMax;
     this->spawnTimer = this->spawnTimerMax;
 }
 
 void Game::initExplosion()
 {
-    this->explosionTimeMax = Util::Game::explosiontimemax;
-    this->explosionTime = Util::Game::explosiontime;
+    this->explosionTimeMax = Config::Game::explosiontimemax;
+    this->explosionTime = Config::Game::explosiontime;
 }
 
 void Game::initGui()
@@ -153,7 +153,7 @@ void Game::initAboutText()
     this->aboutText.setFont(this->font);
     this->aboutText.setCharacterSize(30);
     this->aboutText.setFillColor(sf::Color(64,64,64));
-    this->aboutText.setString(Util::Game::abouttext);
+    this->aboutText.setString(Config::Game::abouttext);
 }
 
 void Game::initWorld()
@@ -367,9 +367,12 @@ void Game::updateMenu()
             this->setGameState(GAME_PLAY);
             break;
         case 2:
-            this->setGameState(MENU_ABOUT);
+            this->setGameState(MENU_RANKING);
             break;
         case 3:
+            this->setGameState(MENU_ABOUT);
+            break;
+        case 4:
             this->window->close();
             break;
         }
@@ -402,14 +405,7 @@ void Game::updateGameOver()
 {
     isVisible = static_cast<int>(clock.getElapsedTime().asSeconds()) % 2 == 0;
 
-    static bool rankingUpdated = false;
-    if (!rankingUpdated) {
-        renderRanking();
-        rankingUpdated = true;
-    }
-
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-        rankingUpdated = false;
         this->setGameState(MENU);
     }
 }
@@ -450,14 +446,18 @@ void Game::updateGamePause()
 void Game::updateAboutMenu()
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-    {
         this->gameState = MENU;
-    }
 }
 
 void Game::renderAboutMenu()
 {
     this->window->draw(aboutText);
+}
+
+void Game::updateRankingMenu()
+{
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+        this->gameState = MENU;
 }
 
 void Game::updateRanking()
@@ -471,18 +471,6 @@ void Game::updateRanking()
     }
 }
 
-
-void Game::renderRanking()
-{
-    std::cout << "===== RANKING =====" << std::endl;
-
-    for (size_t i = 0; i < playerScores.size(); i++) {
-        std::cout << i + 1 << ". " << playerScores[i] << " points" << std::endl;
-    }
-
-    std::cout << "===================" << std::endl;
-}
-
 void Game::update()
 {
     switch (gameState)
@@ -490,6 +478,11 @@ void Game::update()
     case MENU:
         this->updateMenu();
         break;
+
+    case MENU_RANKING:
+        this->updateRankingMenu();
+        break;
+
     case MENU_ABOUT:
         this->updateAboutMenu();
         break;
@@ -516,6 +509,10 @@ void Game::render()
     {
     case MENU:
         this->menu->render(*this->window);
+        break;
+
+    case MENU_RANKING:
+        this->menu->renderRanking(*this->window, playerScores);
         break;
 
     case MENU_ABOUT:

@@ -1,7 +1,7 @@
 #include "Menu.h"
-#include "Utilities.h"
-float windowSizeX = Util::Game::windowSizeX;
-float windowSizeY = Util::Game::windowSizeY;
+#include "GameConfig.h"
+float windowSizeX = Config::Game::windowSizeX;
+float windowSizeY = Config::Game::windowSizeY;
 
 void Menu::initMenu()
 {
@@ -16,20 +16,26 @@ void Menu::initMenu()
 	menu[0].setCharacterSize(80);
 	//menu[0].setPosition(windowSizeX / 2 - menu[0].getLocalBounds().width / 2, windowSizeY / 2 - menu[0].getLocalBounds().height / 2 - 100);
 	menu[0].setPosition(100, 50);
-	// About
+	// Ranking
 	menu[1].setFont(font);
 	menu[1].setFillColor(sf::Color::White);
-	menu[1].setString("About");
+	menu[1].setString("Ranking");
 	menu[1].setCharacterSize(80);
-	//menu[1].setPosition(windowSizeX / 2 - menu[1].getLocalBounds().width / 2, windowSizeY / 2 - menu[1].getLocalBounds().height / 2);
 	menu[1].setPosition(100, 150);
-	// Exit
+	// About
 	menu[2].setFont(font);
 	menu[2].setFillColor(sf::Color::White);
-	menu[2].setString("Exit");
+	menu[2].setString("About");
 	menu[2].setCharacterSize(80);
-	//menu[2].setPosition(windowSizeX / 2 - menu[2].getLocalBounds().width / 2, windowSizeY / 2 - menu[2].getLocalBounds().height / 2 + 100);
+	//menu[1].setPosition(windowSizeX / 2 - menu[1].getLocalBounds().width / 2, windowSizeY / 2 - menu[1].getLocalBounds().height / 2);
 	menu[2].setPosition(100, 250);
+	// Exit
+	menu[3].setFont(font);
+	menu[3].setFillColor(sf::Color::White);
+	menu[3].setString("Exit");
+	menu[3].setCharacterSize(80);
+	//menu[2].setPosition(windowSizeX / 2 - menu[2].getLocalBounds().width / 2, windowSizeY / 2 - menu[2].getLocalBounds().height / 2 + 100);
+	menu[3].setPosition(100, 350);
 
 	menuSelected = -1;
 }
@@ -47,7 +53,7 @@ void Menu::render(sf::RenderWindow& window)
 {
 	window.draw(backgroundSprite);
 
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		window.draw(menu[i]);
 	}
@@ -78,14 +84,14 @@ void Menu::moveUp()
 
 void Menu::moveDown()
 {
-	if (menuSelected + 1 < 3)
+	if (menuSelected + 1 < 4)
 	{
 		menu[menuSelected].setFillColor(sf::Color::White);
 		menuSelected++;
 
 		menu[menuSelected].setFillColor(sf::Color(50, 50, 50));
 	}
-	else if (menuSelected + 1 == 3)
+	else if (menuSelected + 1 == 4)
 	{
 		menu[menuSelected].setFillColor(sf::Color::White);
 		menuSelected = 0;
@@ -98,5 +104,26 @@ void Menu::moveDown()
 int Menu::menuPressed()
 {
 	return menuSelected + 1;
+}
+
+void Menu::renderRanking(sf::RenderWindow& window, std::vector<unsigned>& playerScores)
+{
+	sf::Text rankingText;
+	rankingText.setFont(this->font);
+	rankingText.setCharacterSize(24);
+	rankingText.setFillColor(sf::Color::White);
+	rankingText.setPosition(50.f, 200.f);
+
+	std::stringstream ss;
+	ss << "===== RANKING =====\n";
+	for (size_t i = 0; i < playerScores.size(); i++)
+	{
+		ss << i + 1 << ". " << playerScores[i] << " points\n";
+	}
+	ss << "===================";
+
+	rankingText.setString(ss.str());
+
+	window.draw(rankingText);
 }
 

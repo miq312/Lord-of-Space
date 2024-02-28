@@ -1,5 +1,5 @@
 #include "Bullet.h"
-#include "Utilities.h"
+#include "GameConfig.h"
 
 Bullet::Bullet()
 {
@@ -9,7 +9,7 @@ Bullet::Bullet(sf::Texture* texture, float pos_x, float pos_y, float dir_x, floa
 {
 	this->shape.setTexture(*texture);
 	this->shape.setPosition(pos_x, pos_y);
-	this->shape.setScale(Util::Bullet::scaleX, Util::Bullet::scaleY);
+	this->shape.setScale(Config::Bullet::scaleX, Config::Bullet::scaleY);
 	this->direction.x = dir_x;
 	this->direction.y = dir_y;
 	this->movespeed = move_speed;

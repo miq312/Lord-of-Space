@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <string>
 
-namespace Util
+namespace Config
 {
     namespace Game
     {

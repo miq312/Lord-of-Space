@@ -6,15 +6,15 @@
 class Enemy
 {
 private:
-	sf::CircleShape shape;
-	sf::Texture texture;
+	sf::CircleShape shape{};
+	sf::Texture texture{};
 
-	int pointCount;
-	float speed;
-	int hp;
-	int hpMax;
-	int damage;
-	int points;
+	int pointCount{};
+	float speed{};
+	int hp{};
+	int hpMax{};
+	int damage{};
+	int points{};
 
 	void initVaraibles();
 	void initShape();

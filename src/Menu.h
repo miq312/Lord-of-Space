@@ -2,16 +2,17 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <iostream>
+#include <sstream>
 
 class Menu
 {
 private:
-	int menuSelected;
-	sf::Text menu[3];
-	sf::Font font;
+	int menuSelected{};
+	sf::Text menu[4]{};
+	sf::Font font{};
 
-	sf::Texture backgroundTexture;
-	sf::Sprite backgroundSprite;
+	sf::Texture backgroundTexture{};
+	sf::Sprite backgroundSprite{};
 	
 	void initMenu();
 
@@ -24,5 +25,6 @@ public:
 	void moveUp();
 	void moveDown();
 	int menuPressed();
+	void renderRanking(sf::RenderWindow& window, std::vector<unsigned>& playerScores);
 };
 

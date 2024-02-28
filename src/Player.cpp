@@ -1,11 +1,11 @@
 #include "Player.h"
-#include "Utilities.h"
+#include "GameConfig.h"
 
 void Player::initSprite()
 {
 	this->sprite.setTexture(this->texture);
 
-	this->sprite.scale(Util::Player::scaleX, Util::Player::scaleY);
+	this->sprite.scale(Config::Player::scaleX, Config::Player::scaleY);
 }
 
 void Player::initTexture()
@@ -18,11 +18,11 @@ void Player::initTexture()
 
 void Player::initVaraibles()
 {
-	this->moveSpeed = Util::Player::movespeed;
-	this->attackCoolDownMax = Util::Player::attackcoolcownmax;
+	this->moveSpeed = Config::Player::movespeed;
+	this->attackCoolDownMax = Config::Player::attackcoolcownmax;
 	this->attackCoolDown = this->attackCoolDownMax;
 
-	this->hpMax = Util::Player::hpmax;
+	this->hpMax = Config::Player::hpmax;
 	this->hp = this->hpMax;
 }
 
@@ -32,7 +32,7 @@ Player::Player()
 
 	this->initTexture();
 	this->initSprite();
-	this->setPosition(Util::Player::startPositionX, Util::Player::startPositionY);
+	this->setPosition(Config::Player::startPositionX, Config::Player::startPositionY);
 }
 
 Player::~Player()
@@ -116,7 +116,7 @@ void Player::loseHp(const int value)
 void Player::reset()
 {
 	this->initVaraibles();
-	this->setPosition(Util::Player::startPositionX, Util::Player::startPositionY);
+	this->setPosition(Config::Player::startPositionX, Config::Player::startPositionY);
 }
 
 
